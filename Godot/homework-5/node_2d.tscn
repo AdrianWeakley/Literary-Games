@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://qifubnxyk3wt"]
+
+[ext_resource type="Script" uid="uid://bfml3uu0kfn28" path="res://character_body_2d.gd" id="1_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://7jr1g5au7vcb" path="res://2d_sprite_animation_assets/run_animation/run-1.png" id="2_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://bvtqs5f0g3mjk" path="res://2d_sprite_animation_assets/run_animation/run-2.png" id="3_hqns4"]
+[ext_resource type="Texture2D" uid="uid://d4nhbnyl2sr4n" path="res://2d_sprite_animation_assets/run_animation/run-3.png" id="4_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://b3hecghaigvvl" path="res://2d_sprite_animation_assets/run_animation/run-4.png" id="5_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://b0kbru7ffc3u1" path="res://2d_sprite_animation_assets/run_animation/run-5.png" id="6_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://qyp7e3cjenlu" path="res://2d_sprite_animation_assets/run_animation/run-6.png" id="7_d2bti"]
+[ext_resource type="Texture2D" uid="uid://bwv2j5nmjn7ru" path="res://2d_sprite_animation_assets/run_animation/run-7.png" id="8_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://ca232wte1pygp" path="res://2d_sprite_animation_assets/run_animation/run-8.png" id="9_flf07"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k73cj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ir8iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hqns4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x0ka3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0h7mo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nr8wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d2bti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ta5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_flf07")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4d7sh"]
+a = Vector2(378, 377)
+b = Vector2(20, 374)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
+size = Vector2(1192.9076, 293.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_4d7sh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(199, 166)
+scale = Vector2(5.5704226, 5.0074625)
+sprite_frames = SubResource("SpriteFrames_k73cj")
+animation = &"run"
+frame_progress = 0.41737178
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(11, -20)
+shape = SubResource("SegmentShape2D_4d7sh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(11, -20)
+shape = SubResource("SegmentShape2D_4d7sh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+scale = Vector2(0.6037898, 1)
+polygon = PackedVector2Array(2, 347, 1153, 345, 1161, 638, 0, 645)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(88, 505)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-2, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2"]
+position = Vector2(781.00006, 137)
+rotation = 0.19912255
+polygon = PackedVector2Array(2, 347, 1153, 345, 1161, 638, 0, 645)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1228.4235, 746.3948)
+rotation = -2.9351406
+shape = SubResource("RectangleShape2D_4d7sh")
