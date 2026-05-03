@@ -20,6 +20,9 @@ image brief = "images/bg/briefing room.jpg"
 image city = "images/bg/city.jpg"
 image diner = "images/bg/diner.jpg"
 
+image kyle = "images/char/kyle.png"
+image tanner = "images/char/tanner.png"
+
 # ---------- VARIABLES ----------
 default get_up_clicks = 0
 default bed_time_left = 8.0
@@ -373,7 +376,7 @@ label get_up_attempt:
 # ---------- SUCCESS PATH ----------
 label got_up_in_time:
 
-    show kyle sleepy at left
+    show kyle_sleepy at left
 
     k "{fi=0-1.0-40}Ugh... this sucks.{/fi}"
     n "Kyle swings his legs over the side of the bed and finally stands."
@@ -394,7 +397,7 @@ label bed_timeout:
     a "You really need to get up. The President's life is on the line here."
     a "Based on how many fingers we've gotten in the mail, he only has like four left."
 
-    show kyle sleepy at left
+    show kyle_sleepy at left
 
     k "I know, I know. Just uhh... give me a minute, okay?"
     k "I'll be in the briefing room in a bit."
@@ -418,7 +421,8 @@ label mission_prep:
 
     show commander neutral at right
     show aide neutral at left
-    show kyle sleepy at center
+    show kyle at center:
+        zoom 1.5
 
     play music brief fadein 1.0
 
@@ -525,7 +529,8 @@ label city:
     
     play music city fadein 1.0
 
-    show kyle neutral at left
+    show kyle:
+        zoom 1.5
 
     $ hunger_pressure = 0
     $ city_progress = 0
@@ -780,11 +785,12 @@ label breakfast_scene:
 
     scene diner
 
-    show kyle neutral at left
+    show kyle at left: 
+        zoom 1.5
 
     k "Man, I haven't been here in forever. It has such a cool retro feel."
     
-    show server neutral at right  
+    show server at right  
     with fade
     s "Hey there, sweetie. What can I get ya?"
 
@@ -803,13 +809,13 @@ label breakfast_scene:
     n "There's a ticking clock somewhere in the background, and the President's life is hanging in the balance."
     n "Lost deep in thought, his food arrives before he realizes any time has passed at all."
 
-    show server neutral at right
+    show server at right
     with fade
     s "Here ya go, shnookums. Pancakes, hotcakes, and flapjacks. Enjoy!"
 
     k "Thank you."
 
-    hide server neutral
+    hide server
     with fade
 
     n "Kyle enjoys his well-discounted meal."
@@ -817,7 +823,8 @@ label breakfast_scene:
 
     n "\"Kyle?\""
 
-    show tanner neutral at right
+    show tanner at right:  
+        zoom 2
     with fade
 
     k "..."
@@ -1102,7 +1109,7 @@ label breakfast_tanner_wrapup:
 
     k "You too, Tanner. See you around."
 
-    hide tanner neutral
+    hide tanner
     with fade
 
     n "Kyle sits there for a moment after Tanner leaves, feeling the weight of the day settle back onto him."
@@ -1119,8 +1126,8 @@ label city_return:
 
     play music city fadein 1.0
 
-    show kyle neutral at left
-
+    show kyle:  
+        zoom 1.5
     n "The city feels louder when Kyle steps back outside."
     n "Traffic drones scream overhead. Somewhere in the distance, an emergency siren rises and falls."
     n "The mission is still waiting."
