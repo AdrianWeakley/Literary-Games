@@ -2,6 +2,6 @@
 
 ## Adrian Weakley
 
-My Ren'Py project is contained in the game folder. My writeup is included as a PDF. There are also several scans from my notebook, although I rarely used it during my creative process.
+My Ren'Py project is contained in the game folder. My report is included as a PDF. I didn't end up using my notebook for anything significant during my creative process — it was mostly hands-on iteration as described in the report - so there are no scans of that included.
 
 Thank you!
