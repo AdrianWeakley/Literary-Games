@@ -213,10 +213,6 @@ screen city_choice_screen():
 
                 elif hunger_pressure == 4:
 
-                    textbutton "Ignore it":
-                        text_size 14
-                        action Return("walk_hard")
-
                     if not used_food:
                         textbutton "Open the coupon":
                             text_size 30
